@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(22, 22, 22);
+    color: aliceblue;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(0.47TURN, #403817, #A0892C, #C8AB37, #DECD87);
+    padding: 1em;
+  }
+  
+  .navbar .logo {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 1.6em;
+  }
+  
+  .navbar .logo span {
+    color: var(--primary-color);
+  }
+  
+  .navbar nav {
+    display: none;
+  }
+  
+  .navbar .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    place-content: space-between;
+  }
+  
+  .navbar .mobile-menu {
+    cursor: pointer;
+  }
+
+div {
+    /* border: 1px solid whitesmoke; */
+    border-collapse: collapse;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .mobile-menu, .mobile-menu-exit {
+      display: none;
+    }
+    .navbar .container {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 180px auto;
+        grid-template-columns: 180px auto;
+    }
+    .navbar nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+    }
+    .navbar nav ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;;
+        list-style: none;
+    }
+    .navbar nav a {
+        color: black;
+        font-size: 1.4em;
+        padding: 0.1em 1em;
+    }
+}
