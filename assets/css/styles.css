@@ -1,26 +1,42 @@
 body {
-    background-color: #ccccccff;
+    background-color: #e6e6e6ff;
     color: rgb(22, 22, 22);
     font-family: 'Lato', sans-serif;
     width: 100%;
-    margin: 0%;
+    margin: 0;
 }
 
-body + .dark-mode {
-    background-color: #20272e;
+body .dark-mode {
+    background-color: rgb(22, 22, 22);
     color: #ccccccff;
+
 }
+
+body .switching-mode {
+    transition: 1.4s ease-in-out;
+}
+
 
 .navbar {
+    z-index: 1000;
     background: linear-gradient(0.47TURN, #403817, #A0892C, #C8AB37, #DECD87);
     padding: 1.5em;
 }
-  
+
+.dark-mode .navbar {
+    background: linear-gradient(0.47TURN, #14193e, #2d387b, #1f3e74, #405e92);
+    padding: 1.5em;
+}
+
 .navbar .logo {
     text-decoration: none;
     font-weight: bold;
-    color: black;
+    color: rgb(22, 22, 22);
     font-size: 1.6em;
+}
+
+.dark-mode .navbar .logo{
+    color: #ccccccff;
 }
   
 /* .navbar .logo span {
@@ -43,11 +59,12 @@ body + .dark-mode {
 }
 
 section {
-    height: 14em;
+    height: 50em;
 }
 
 section div {
-    margin: 1em 0em 1em 0em;
+    padding: 0.25em 1.5em;
+    /* background-color: red; */
 }
 
 
@@ -57,24 +74,31 @@ nav.menu-btn {
   
 nav {
     position: fixed;
-    z-index: 999;
     width: 66%;
     right: 0;
     top: 0;
     background: #20272e;
     height: 100vh;
 }
-  
+
+.dark-mode nav {
+    background: #ccccccff;
+}
+
 /* nav ul.primary-nav {
     margin-top: 5em;
 } */
   
-  nav li a {
+nav li a {
     text-decoration: none;
     display: block;
     text-align: right;
   }
-  
+
+.dark-mode nav li a {
+    color: #ccccccff;
+  }
+
   nav li a:hover {
     font-weight: bold;
   }
@@ -125,6 +149,17 @@ nav {
         margin-top: 0;
         margin-bottom: 0;
     }
+
+
+    /* .avatar {
+        position:static;
+        display: flex;
+        height: auto;
+        width: 60%;
+        margin-top: 72px;
+        right: 15%;
+        z-index: 800;
+    } */
 
 }
 
@@ -206,6 +241,7 @@ input:checked + .slider:before {
     transform: translateX(-54px);
 }
 
+
 /* Rounded sliders */
 .slider.round {
     border-radius: 42px;
@@ -225,3 +261,82 @@ input:checked + .slider:before {
         
     border: solid 1px white;
 } */
+
+.home {
+    margin-top: 72px;
+}
+
+.avatar {
+    position: absolute;
+    display: block;
+    height: auto;
+    width: 35%;
+    margin-top: 72px;
+    right: 15%;
+}
+
+#avatar-dark {
+    opacity: 0;
+    transition: opacity 1.4s ease-in-out;
+    transition: opacity 1.4s ease-in-out;
+    -webkit-transition: opacity 1.4s ease-out;  
+    -moz-transition: opacity 1.4s ease-in-out;  
+}
+
+#avatar-light {
+    opacity: 1;
+
+    transition: opacity 1.4s ease-in-out;
+    transition: opacity 1.4s ease-in-out;
+    -webkit-transition: opacity 2s ease-out;  
+    -moz-transition: opacity 2s ease-in-out;  
+}
+
+.dark-mode #avatar-light {
+    opacity: 0;
+}
+
+.dark-mode #avatar-dark {
+    opacity: 1;
+}
+
+header {
+    position: absolute;
+    margin: 0.5em auto;
+    width: 50%;
+    left: 25%;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+}
+
+h1 {
+    position: absolute;
+    width: 75%;
+    left: 12.5%;
+    margin: 1em auto;
+    font-size: 6em;
+}
+
+section .container {
+    width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    display: block;
+}
+
+label, input, textarea {
+    width: 90%;
+    font-size: 1.5em;
+    margin: 0.5em 0em;
+}
+
+.contact-left {
+    width: 45%;
+    margin-top: 6em;
+    border-right: 4px solid black;
+}
